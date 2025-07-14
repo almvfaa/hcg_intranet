@@ -30,8 +30,8 @@ class ProcesoCompra(models.Model):
     fecha_inicio = models.DateField()
     estado = models.CharField(max_length=20, choices=ESTADOS, default='En planeación')
 
-    class Meta:
-        abstract = True
+    def __str__(self):
+        return self.objeto_contratacion
 
 class Licitacion(ProcesoCompra):
     numero_licitacion = models.CharField(max_length=50)
